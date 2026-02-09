@@ -1,0 +1,6 @@
+# Default initial positions for stick_rm's ros2_control fake system
+
+initial_positions:
+  link1_link_joint: 0
+  link2_link_joint: 0
+  swivel_link_joint: 0

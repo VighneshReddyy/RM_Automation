@@ -1,0 +1,125 @@
+{
+  "collisions": [
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Cube.017.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "Cube.017"
+      },
+      "link": "body_link",
+      "name": "body.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Circle.002.stl",
+            "operations": [
+              {
+                "scale": [
+                  [
+                    0.12363800406455994,
+                    0.12363800406455994,
+                    0.12363800406455994
+                  ]
+                ]
+              },
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          0.12363800406455994,
+          0.12363800406455994,
+          0.12363800406455994
+        ],
+        "unique_name": "Circle.002"
+      },
+      "link": "swivel_link",
+      "name": "swivel.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Cube.016.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "Cube.016"
+      },
+      "link": "link1_link",
+      "name": "link1.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Cube.015.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "Cube.015"
+      },
+      "link": "link2_link",
+      "name": "link2.001",
+      "primitive": [],
+      "primitives": []
+    }
+  ]
+}
