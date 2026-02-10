@@ -47,13 +47,15 @@ class BNO055Node(Node):
         self.link2Pwm=0
 #        self.l2=dict()
         self.line="123"
-        
+
         self.imu_pub_ = self.create_publisher(ImuData, '/external_imu', 10)
 
         self.delivery_sub_ = self.create_subscription(Bool, '/deliver_now',self.delivery_callback, 10)
         
         self.armPwm_ =self.create_publisher(ArmPwm,'/arm_pwm',10)
         
+        self.armAngle_=self.create_publisher(ArmPosition,'/real/arm_position',15)
+
         self.delivered_pub_=self.create_publisher(Bool,"/delivered",10)
 
         self.initialize_imu()
@@ -123,30 +125,31 @@ class BNO055Node(Node):
             if not line:
                 return
 
-            if not line.startswith(" yl1"):
+            if not line.startswith("yl1"):
                 print(line)
                 return
 
             z = line.split('_')
-            if len(z) != 12:
+            if len(z) != 8:
                 print("trash IMU packet:", line)
                 return
-
+            
             # Link 1
             self.l1["y"] = safe_float(z[1])
             self.l1["r"] = safe_float(z[2])
             self.l1["p"] = (-safe_float(z[3])) % 360
-
             # Link 2
             self.l2["y"] = safe_float(z[5])
             self.l2["r"] = safe_float(z[6])
             self.l2["p"] = safe_float(z[7]) % 360
 
-
-
-            print(
-    f"L1 [Y:{self.l1['y']:.2f} R:{self.l1['r']:.2f} P:{self.l1['p']:.2f}] | "
-    f"L2 [Y:{self.l2['y']:.2f} R:{self.l2['r']:.2f} P:{self.l2['p']:.2f}] | ")
+            arm_pos=ArmPosition()
+            self.l2["p"]=self.l2["p"]-self.l1["p"]
+            arm_pos.link1=self.l1["p"]-90
+            arm_pos.link2=self.l2["p"]-90
+            arm_pos.swivel=self.l1["y"]
+            self.armAngle_.publish(arm_pos)
+            print(f"L1 [Y:{self.l1['y']:.2f} R:{self.l1['r']:.2f} P:{self.l1['p']:.2f}] | "f"L2 [Y:{self.l2['y']:.2f} R:{self.l2['r']:.2f} P:{self.l2['p']:.2f}] | ")
 
         except Exception as e:
             print("IMU parse error:", e)
