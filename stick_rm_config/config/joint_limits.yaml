@@ -20,7 +20,7 @@ joint_limits:
     max_acceleration: 0
   link2_link_joint:
     has_velocity_limits: false
-    max_velocity: 0
+    max_velocity: 0                                    ki8888888888888888888888888888888888888888888888888888888888a
     has_acceleration_limits: false
     max_acceleration: 0
   swivel_link_joint:
