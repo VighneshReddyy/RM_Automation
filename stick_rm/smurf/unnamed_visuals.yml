@@ -1,0 +1,208 @@
+{
+  "visuals": [
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Cube.010.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "Cube.010"
+      },
+      "name": "body",
+      "origin": {
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relative_to": "body_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "body"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Circle.001.stl",
+            "operations": [
+              {
+                "scale": [
+                  [
+                    0.12363800406455994,
+                    0.12363800406455994,
+                    0.12363800406455994
+                  ]
+                ]
+              },
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          0.12363800406455994,
+          0.12363800406455994,
+          0.12363800406455994
+        ],
+        "unique_name": "Circle.001"
+      },
+      "name": "swivel",
+      "origin": {
+        "position": [
+          6.358411354488316e-17,
+          7.533320105394056e-16,
+          -1.4973277733112002e-08
+        ],
+        "relative_to": "swivel_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "swivel"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Cube.003.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "Cube.003"
+      },
+      "name": "link1",
+      "origin": {
+        "position": [
+          5.55111644661492e-17,
+          -4.44089289259414e-16,
+          -5.9378429326634346e-09
+        ],
+        "relative_to": "link1_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "link1"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Cube.004.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "Cube.004"
+      },
+      "name": "link2",
+      "origin": {
+        "position": [
+          0.0,
+          -1.1175866274082402e-09,
+          2.9791001665557815e-08
+        ],
+        "relative_to": "link2_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "link2"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\Cube.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "Cube"
+      },
+      "name": "end",
+      "origin": {
+        "position": [
+          0.0,
+          0.0,
+          5.960464477539063e-08
+        ],
+        "relative_to": "end_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "end"
+    }
+  ]
+}

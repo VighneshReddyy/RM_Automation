@@ -1,0 +1,13 @@
+{
+  "additional_files": {},
+  "description": "",
+  "files": [
+    "..\\urdf\\unnamed.urdf",
+    "unnamed_collisions.yml",
+    "unnamed_joints.yml",
+    "unnamed_links.yml",
+    "unnamed_submodels.yml",
+    "unnamed_visuals.yml"
+  ],
+  "modelname": "unnamed"
+}

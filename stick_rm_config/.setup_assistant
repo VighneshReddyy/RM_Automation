@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: stick_rm
+    relative_path: urdf/stick_rm_two.urdf
+  srdf:
+    relative_path: config/stick_rm_two.srdf
+  package_settings:
+    author_name: saisarath
+    author_email: shirs.saisarath@gmail.com
+    generated_timestamp: 1770653404
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

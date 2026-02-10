@@ -1,3 +1,0 @@
-Instantiated with filepath=None->None, scale=[1.0, 1.0, 1.0], mesh=<bpy_struct, Mesh("Cube.015") at 0x000002080A54EE68>, meshname=Cube.015, material=None, mesh_orientation=None, {}
-->trying export of <bpy_struct, Mesh("Cube.015") at 0x000002080A54EE68> to F:\rm_auto_stuff\urdf\yesy_yes\unnamed\meshes\stl\Cube.015.stl
-->wrote stl to F:\rm_auto_stuff\urdf\yesy_yes\unnamed\meshes\stl\Cube.015.stl from bpy_types.Mesh

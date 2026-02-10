@@ -1,0 +1,27 @@
+moveit_servo:
+  ros__parameters:
+
+    move_group_name: arm
+    planning_frame: body_link
+    ee_frame_name: end_link
+
+    command_in_type: pose  # we will use interactive marker
+    scale:
+      linear: 0.2
+      rotational: 0.5
+
+    publish_period: 0.01
+
+    incoming_command_timeout: 0.1
+    num_outgoing_halt_msgs_to_publish: 4
+
+    lower_singularity_threshold: 15.0
+    hard_stop_singularity_threshold: 30.0
+
+    joint_topic: /arm_controller/joint_trajectory
+
+    command_out_type: trajectory
+
+    robot_link_command_frame: end_link
+
+    use_gazebo: false

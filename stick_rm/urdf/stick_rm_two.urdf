@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<robot name="stick_rm_two" version="1.0">
+
+  <joint name="end_link_joint" type="revolute">
+    <limit lower="-3.14000" upper="3.14000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.50000 0.02500"/>
+    <parent link="link2_link"/>
+    <child link="end_link"/>
+    <axis xyz="1.00000 0.00000 0.00000"/>
+  </joint>
+
+  <joint name="link1_link_joint" type="revolute">
+    <limit lower="-0.50000" upper="1.20000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.02551"/>
+    <parent link="swivel_link"/>
+    <child link="link1_link"/>
+    <axis xyz="1.00000 0.00000 0.00000"/>
+  </joint>
+
+  <joint name="link2_link_joint" type="revolute">
+    <limit lower="-1.50000" upper="1.10000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.02500 0.60000"/>
+    <parent link="link1_link"/>
+    <child link="link2_link"/>
+    <axis xyz="1.00000 0.00000 0.00000"/>
+  </joint>
+
+  <joint name="swivel_link_joint" type="revolute">
+    <limit lower="-1.57000" upper="1.57000" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.12440"/>
+    <parent link="body_link"/>
+    <child link="swivel_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+
+  <link name="body_link">
+    <collision>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.017.stl"/>
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.010.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="end_link">
+    <collision>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.001.stl" scale="0.80840 0.80840 0.80840"/>
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="link1_link">
+    <collision>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.016.stl"/>
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.003.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="link2_link">
+    <collision>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.015.stl"/>
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Cube.004.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="swivel_link">
+    <collision>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Circle.002.stl" scale="0.12364 0.12364 0.12364"/>
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <mesh filename="package://stick_rm/meshes/stl/Circle.001.stl" scale="0.12364 0.12364 0.12364"/>
+      </geometry>
+    </visual>
+  </link>
+
+</robot>

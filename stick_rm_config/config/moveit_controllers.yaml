@@ -1,0 +1,12 @@
+moveit_simple_controller_manager:
+  controller_names:
+    - arm_controller
+
+  arm_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    joints:
+      - swivel_link_joint
+      - link1_link_joint
+      - link2_link_joint
+      - end_link_joint

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="stick_rm_two">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import stick_rm_two urdf file -->
+    <xacro:include filename="$(find stick_rm)/urdf/stick_rm_two.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="stick_rm_two.ros2_control.xacro" />
+
+
+    <xacro:stick_rm_two_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>
