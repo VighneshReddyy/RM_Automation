@@ -24,7 +24,7 @@ class ArmStateSubscriber(Node):
         )
         self.realArm = self.create_subscription(
             ArmPosition,
-            '/real/arm_position',
+            "/real/arm_position",
             self.arm_callback,
             10
         )

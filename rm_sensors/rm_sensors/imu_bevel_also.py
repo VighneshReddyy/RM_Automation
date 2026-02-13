@@ -54,6 +54,7 @@ class BNO055Node(Node):
         self.delivery_sub_ = self.create_subscription(Bool, '/deliver_now',self.delivery_callback, 10)
         
         self.armPwm_ =self.create_publisher(ArmPwm,'/arm_pwm',10)
+        self.armpos=self.create_publisher(ArmPosition,"/real/arm_position",10)
         
         self.delivered_pub_=self.create_publisher(Bool,"/delivered",10)
 
@@ -144,7 +145,7 @@ class BNO055Node(Node):
             self.l2["p"] = safe_float(z[7]) % 360
 
             self.bevel["y"] = safe_float(z[8])
-            self.bevel["r"] = safe_float(z[9])
+            self.bevel["r"] = safe_float(z[9])% 360
             self.bevel["p"] = safe_float(z[10]) % 360
 
 
@@ -153,6 +154,17 @@ class BNO055Node(Node):
     f"L1 [Y:{self.l1['y']:.2f} R:{self.l1['r']:.2f} P:{self.l1['p']:.2f}] | "
     f"L2 [Y:{self.l2['y']:.2f} R:{self.l2['r']:.2f} P:{self.l2['p']:.2f}] | "
     f"be [Y:{self.bevel['y']:.2f} R:{self.bevel['r']:.2f} P:{self.bevel['p']:.2f}] | ")
+
+            msging=ArmPosition()
+
+            msging.link1=self.l1['p']
+            msging.link2=self.l2['p']
+            msging.swivel=self.l1['y']
+            msging.bevel_pitch=self.bevel['p']
+            msging.bevel_roll=self.bevel['r']
+
+
+            self.armpos.publish(msging)
 
 
         except Exception as e:
