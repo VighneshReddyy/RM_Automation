@@ -1,0 +1,286 @@
+{
+  "visuals": [
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\body.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "body"
+      },
+      "name": "body",
+      "origin": {
+        "position": [
+          0.0,
+          0.0,
+          0.0034684177953749895
+        ],
+        "relative_to": "body_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "body"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\swivel.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "swivel"
+      },
+      "name": "swivel",
+      "origin": {
+        "position": [
+          0.2560272071377758,
+          -0.002497948855039409,
+          -0.5581657027104916
+        ],
+        "relative_to": "swivel_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "swivel"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\link1.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link1"
+      },
+      "name": "link1",
+      "origin": {
+        "position": [
+          0.0,
+          1.862645149230957e-09,
+          2.384185791015625e-07
+        ],
+        "relative_to": "link1_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "link1"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\link2.stl",
+            "operations": [
+              {
+                "scale": [
+                  [
+                    0.9999998807907104,
+                    0.9999998807907104,
+                    0.9999999403953552
+                  ]
+                ]
+              },
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          0.9999998807907104,
+          0.9999998807907104,
+          0.9999999403953552
+        ],
+        "unique_name": "link2"
+      },
+      "name": "link2",
+      "origin": {
+        "position": [
+          1.4664568226407937e-08,
+          -1.0077201295644045e-09,
+          -2.817419755274386e-07
+        ],
+        "relative_to": "link2_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "link2"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\wwad.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "wwad"
+      },
+      "name": "bevel",
+      "origin": {
+        "position": [
+          0.0,
+          1.862645149230957e-09,
+          0.0
+        ],
+        "relative_to": "bevel_link.001",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "bevel"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\awsf.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "awsf"
+      },
+      "name": "gripperl",
+      "origin": {
+        "position": [
+          1.1920928955078125e-07,
+          -1.862645149230957e-09,
+          1.1920928955078125e-07
+        ],
+        "relative_to": "gripperl_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "gripperl"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\afsg.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "afsg"
+      },
+      "name": "gripperr",
+      "origin": {
+        "position": [
+          1.1920928955078125e-07,
+          -1.862645149230957e-09,
+          0.0
+        ],
+        "relative_to": "gripperr_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "gripperr"
+    }
+  ]
+}

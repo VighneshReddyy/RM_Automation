@@ -1,0 +1,209 @@
+{
+  "collisions": [
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\adshag.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "adshag"
+      },
+      "link": "body_link",
+      "name": "body.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\aesdg.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "aesdg"
+      },
+      "link": "swivel_link",
+      "name": "swivel.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\agsf.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "agsf"
+      },
+      "link": "link1_link",
+      "name": "link1.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\asgd.stl",
+            "operations": [
+              {
+                "scale": [
+                  [
+                    0.9999998807907104,
+                    0.9999998807907104,
+                    0.9999999403953552
+                  ]
+                ]
+              },
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          0.9999998807907104,
+          0.9999998807907104,
+          0.9999999403953552
+        ],
+        "unique_name": "asgd"
+      },
+      "link": "link2_link",
+      "name": "link2.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\bevel.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "bevel"
+      },
+      "link": "bevel_link.001",
+      "name": "bevel.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\dsgsdah.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "dsgsdah"
+      },
+      "link": "gripperl_link",
+      "name": "gripperl.001",
+      "primitive": [],
+      "primitives": []
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\stl\\afws.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "afws"
+      },
+      "link": "gripperr_link",
+      "name": "gripperr.001",
+      "primitive": [],
+      "primitives": []
+    }
+  ]
+}

@@ -74,11 +74,20 @@ class ArmStateSubscriber(Node):
         print(self.sim_l1,self.sim_l2,self.sim_swivel)
         self.pwm_l1=0
         self.pwm_l2=0
+
         if(abs(self.sim_l1-self.real_l1)>1):
-            self.pwm_l1=self.sim_l1-self.real_l1
+        
+            self.pwm_l1=self.sim_l1-self.real_l1W
+        
         if(abs(self.sim_l2-self.real_l2)>1):
+        
             self.pwm_l2=self.sim_l2-self.real_l2
+        
         self.send_string=self.ref_string
+
+
+
+
         if(self.pwm_l1>0):
             self.send_string=self.send_string.replace("U0","U-1") #down
         elif self.pwm_l1<0:

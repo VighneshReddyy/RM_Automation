@@ -1,0 +1,72 @@
+{
+  "links": [
+    {
+      "collisions": [
+        "body.001"
+      ],
+      "name": "body_link",
+      "visuals": [
+        "body"
+      ]
+    },
+    {
+      "collisions": [
+        "swivel.001"
+      ],
+      "name": "swivel_link",
+      "visuals": [
+        "swivel"
+      ]
+    },
+    {
+      "collisions": [
+        "link1.001"
+      ],
+      "name": "link1_link",
+      "visuals": [
+        "link1"
+      ]
+    },
+    {
+      "collisions": [
+        "link2.001"
+      ],
+      "name": "link2_link",
+      "visuals": [
+        "link2"
+      ]
+    },
+    {
+      "collisions": [],
+      "name": "bevel_link",
+      "visuals": []
+    },
+    {
+      "collisions": [
+        "bevel.001"
+      ],
+      "name": "bevel_link.001",
+      "visuals": [
+        "bevel"
+      ]
+    },
+    {
+      "collisions": [
+        "gripperl.001"
+      ],
+      "name": "gripperl_link",
+      "visuals": [
+        "gripperl"
+      ]
+    },
+    {
+      "collisions": [
+        "gripperr.001"
+      ],
+      "name": "gripperr_link",
+      "visuals": [
+        "gripperr"
+      ]
+    }
+  ]
+}

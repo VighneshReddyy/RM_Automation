@@ -1,0 +1,158 @@
+{
+  "joints": [
+    {
+      "child": "swivel_link",
+      "constraint_axes": [],
+      "cut_joint": false,
+      "joint_dependencies": [],
+      "joint_type": "revolute",
+      "name": "swivel",
+      "origin": {
+        "position": [
+          -0.2560271918773651,
+          0.002497948706150055,
+          0.5616340872365981
+        ],
+        "relative_to": "body_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "parent": "body_link"
+    },
+    {
+      "child": "link1_link",
+      "constraint_axes": [],
+      "cut_joint": false,
+      "joint_dependencies": [],
+      "joint_type": "revolute",
+      "name": "link1",
+      "origin": {
+        "position": [
+          -1.0430813457418253e-06,
+          0.009736680074732308,
+          0.13499999850988376
+        ],
+        "relative_to": "swivel_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "parent": "swivel_link"
+    },
+    {
+      "child": "link2_link",
+      "constraint_axes": [],
+      "cut_joint": false,
+      "joint_dependencies": [],
+      "joint_type": "revolute",
+      "name": "link2",
+      "origin": {
+        "position": [
+          0.002058863639831543,
+          0.002108633518218994,
+          0.5799883604049683
+        ],
+        "relative_to": "link1_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "parent": "link1_link"
+    },
+    {
+      "child": "bevel_link",
+      "constraint_axes": [],
+      "cut_joint": false,
+      "joint_dependencies": [],
+      "joint_type": "revolute",
+      "name": "bevel_pitch",
+      "origin": {
+        "position": [
+          -0.5232179912310464,
+          -0.0018157969061576296,
+          -0.00019673865115521494
+        ],
+        "relative_to": "link2_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "parent": "link2_link"
+    },
+    {
+      "child": "bevel_link.001",
+      "constraint_axes": [],
+      "cut_joint": false,
+      "joint_dependencies": [],
+      "joint_type": "revolute",
+      "name": "bevel_roll",
+      "origin": {
+        "position": [
+          -1.9209460055957805e-07,
+          1.115950064994875e-09,
+          1.6254441259633268e-07
+        ],
+        "relative_to": "bevel_link",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "parent": "bevel_link"
+    },
+    {
+      "child": "gripperl_link",
+      "constraint_axes": [],
+      "cut_joint": false,
+      "joint_dependencies": [],
+      "joint_type": "prismatic",
+      "name": "gripper_l",
+      "origin": {
+        "position": [
+          -0.11603432893753052,
+          -0.01153850369155407,
+          -0.00026226043701171875
+        ],
+        "relative_to": "bevel_link.001",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "parent": "bevel_link.001"
+    },
+    {
+      "child": "gripperr_link",
+      "constraint_axes": [],
+      "cut_joint": false,
+      "joint_dependencies": [],
+      "joint_type": "prismatic",
+      "name": "gripper_r",
+      "origin": {
+        "position": [
+          -0.1161196231842041,
+          0.009528161957859993,
+          -0.0002627372741699219
+        ],
+        "relative_to": "bevel_link.001",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "parent": "bevel_link.001"
+    }
+  ]
+}
