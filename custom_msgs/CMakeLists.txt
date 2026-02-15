@@ -13,6 +13,7 @@ set(msg_files
   "msg/GpsDetails.msg"
   "msg/ArmPwm.msg"
   "msg/ArmPosition.msg"
+  "msg/GripperDest.msg"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
