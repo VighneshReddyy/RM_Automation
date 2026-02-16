@@ -140,7 +140,7 @@ class BNO055Node(Node):
             self.l1["p"] = (-safe_float(z[3])) % 360
 
             # Link 2
-            self.l2["y"] = safe_float(z[5])
+            self.l2["y"] = safe_float(z[5])%360
             self.l2["r"] = safe_float(z[6])
             self.l2["p"] = safe_float(z[7]) % 360
 
@@ -152,12 +152,12 @@ class BNO055Node(Node):
 
         
 
-            #self.bevel["p"]=self.bevel["p"]-self.l2["p"]
+            self.bevel["p"]=self.bevel["p"]-self.l2["p"]
             self.l2["p"]=self.l2["p"]-self.l1["p"]
-            msging.link1=self.l1["p"]-90
-            msging.link2=self.l2["p"]-90
+            msging.link1=(self.l1["p"]- 90) % 360
+            msging.link2=(self.l2["p"]-90)%360
             
-            msging.swivel=self.l1["y"]
+            msging.swivel=(-(self.l2["y"]-180))%360
             
             msging.bevel_pitch=self.bevel['p']
 

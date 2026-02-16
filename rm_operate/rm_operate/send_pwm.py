@@ -11,7 +11,7 @@ from custom_msgs.msg import GripperDest
 class ArmStateSubscriber(Node):
     def __init__(self):
         super().__init__('arm_state_subscriber')
-        self.send_string="M0L0R0T0U0G0Z0E"
+        #self.send_string="M0L0R0T0U0G0Z0E"
         self.send_string="M0L0R0T0U0S0G0Z0E"
         self.ref_string=self.send_string
         self.udp_ip = "10.0.0.7"
@@ -36,7 +36,8 @@ class ArmStateSubscriber(Node):
             self.gripper_callback,
             10
         )
-        self.timer = self.create_timer(0.0025, self.send_pwm)
+        self.looptime=0.0025
+        self.timer = self.create_timer(self.looptime, self.send_pwm)
         self.real_l1=0.0
         self.real_l2=0.0
         self.real_swivel=0.0
@@ -50,6 +51,22 @@ class ArmStateSubscriber(Node):
         self.sim_gripper=0
 
         self.gripperEngage=False
+        #pid stuff
+
+        self.link1_error_prev=0
+        self.link1_error_int=0
+        self.pid_const_link1={'p':200.0,'i':0.1,'d':10}
+
+        self.link2_error_prev=0
+        self.pid_const_link2={'p':75.0,'i':0.1,'d':10}
+        self.link2_error_int=0
+        
+        
+        self.swivel_error_prev=0
+        self.pid_const_swivel={'p':100.0,'i':0.08,'d':10}
+        self.swivel_error_int=0
+        
+
 
         self.pwm_l1=0
         self.pwm_l2=0
@@ -66,10 +83,13 @@ class ArmStateSubscriber(Node):
             match name: 
                 case "swivel_link_joint":
                     self.sim_swivel=round(self.rad_to_deg(pos),2)
+                    self.sim_swivel=(-(self.sim_swivel + 360)) % 360
                 case "link1_link_joint":
                     self.sim_l1=round(self.rad_to_deg(pos),2)
+                    self.sim_l1=(self.sim_l1 + 360) % 360
                 case "link2_link_joint":
                     self.sim_l2=round(self.rad_to_deg(pos),2)
+                    self.sim_l2=(self.sim_l2 + 360) % 360
                 
 
             #self.get_logger().info(f"{name} : {pos:.3f}")
@@ -89,20 +109,73 @@ class ArmStateSubscriber(Node):
         self.real_swivel=round(msg.swivel,2)
         self.real_bevel_roll=round(msg.bevel_roll,2)
         self.real_real_bevel_pitch=round(msg.bevel_pitch,2)
+        self.real_swivel=(self.real_swivel) % 360
 
 
     def send_pwm(self):
-        print("yes")
-        print(self.real_l1,self.real_l2,self.real_swivel)
-        print(self.sim_l1,self.sim_l2,self.sim_swivel)
+        self.send_string=self.ref_string
+        #print("yes")
+        #print("real",self.real_l1,self.real_l2,self.real_swivel)
+        #print("sim",self.sim_l1,self.sim_l2,self.sim_swivel)
         self.pwm_l1=0
         self.pwm_l2=0
+        self.pwm_swivel=0
+        
+        link1_error= (self.sim_l1 - self.real_l1 + 180) % 360 - 180
+        link2_error= (self.sim_l2 - self.real_l2 + 180) % 360 - 180
+        swivel_error= (self.sim_swivel-self.real_swivel+180)%360 -180
+        print("real",round(self.real_l1,2),round(self.real_l2,2),round(self.real_swivel,2),"\nsim",round(self.sim_l1,2),round(self.sim_l2,2),round(self.sim_swivel,2),"\nerror->",round(link1_error,2),round(link2_error,2),round(swivel_error,2))
+        
+        if(abs(link1_error)>0.0):
+            self.link1_error_int+=link1_error*self.looptime
+            p=self.pid_const_link1['p']*link1_error
+            i=self.pid_const_link1['i']*self.link1_error_int
+            d=self.pid_const_link1['d']*((link1_error-self.link1_error_prev) /self.looptime)
+            pwm=p+i+d
+            pwm=max(min(pwm, 255), -255)
+            pwm=round(pwm)
+            pwm= -pwm
+            self.pwm_l1=pwm
+            self.send_string=self.send_string.replace("U0",f"U{self.pwm_l1}")
+            self.link1_error_prev=link1_error
+        else:
+            self.send_string=self.send_string.replace("U0",f"U{0}")
+        
+        if(abs(link2_error)>0.0):
+            self.link2_error_int+=link2_error*self.looptime
+            p=self.pid_const_link2['p']*link2_error
+            i=self.pid_const_link2['i']*self.link2_error_int
+            d=self.pid_const_link2['d']*((link2_error-self.link2_error_prev) /self.looptime)
+            pwm=p+i+d
+            pwm=max(min(pwm, 255), -255)
+            pwm=round(pwm)
+            pwm= -pwm
+            self.pwm_l2=pwm
+            self.send_string=self.send_string.replace("T0",f"T{self.pwm_l2}")
+            self.link2_error_prev=link2_error
+        else:
+            self.send_string=self.send_string.replace("T0",f"T{0}")
+        
 
-        if(abs(self.sim_l1-self.real_l1)>1):
-            self.pwm_l1=self.sim_l1-self.real_l1
-        if(abs(self.sim_l2-self.real_l2)>1):
-            self.pwm_l2=self.sim_l2-self.real_l2
-        self.send_string=self.ref_string
+        if(abs(swivel_error)>0.0):
+            self.swivel_error_int+=swivel_error*self.looptime
+            p=self.pid_const_swivel['p']*swivel_error
+            i=self.pid_const_swivel['i']*self.swivel_error_int
+            d=self.pid_const_swivel['d']*((swivel_error-self.swivel_error_prev) /self.looptime)
+            pwm=p+i+d
+            pwm=max(min(pwm, 255), -255)
+            pwm=round(pwm)
+            pwm= pwm
+            self.pwm_swivel=pwm
+            self.send_string=self.send_string.replace("S0",f"S{self.pwm_swivel}")
+            self.swivel_error_prev=swivel_error
+        else:
+            self.send_string=self.send_string.replace("S0","S0")
+
+        
+
+       
+        
 
 
 
@@ -127,10 +200,9 @@ class ArmStateSubscriber(Node):
 
         """
 
-        if(self.pwm_l1>0):
-            self.send_string=self.send_string.replace("U0","U-1") #down
-        elif self.pwm_l1<0:
-            self.send_string=self.send_string.replace("U0","U1")#up
+
+
+        """    
         if(self.pwm_l2>0):
             self.send_string=self.send_string.replace("T0","T-1") #down
         elif self.pwm_l2<0:
@@ -144,10 +216,12 @@ class ArmStateSubscriber(Node):
         self.gripperEngage=True
         if(self.gripperEngage):
             self.send_string=self.send_string.replace("G0","G3")
-
+        """
+        
+        #self.send_string=self.send_string.replace("S0",f"S{200}")
         self.sock.sendto(self.send_string.encode(), (self.udp_ip, self.udp_port))
 
-        print("pwm ",self.pwm_l1,self.pwm_l2,"\n",self.send_string)
+        print("\npwm ",self.pwm_l1,self.pwm_l2,self.pwm_swivel,"\n",self.send_string)
 
         
 
