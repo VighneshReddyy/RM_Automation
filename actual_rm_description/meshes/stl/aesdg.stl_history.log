@@ -1,3 +1,0 @@
-Instantiated with filepath=None->None, scale=[1.0, 1.0, 1.0], mesh=<bpy_struct, Mesh("aesdg") at 0x00000242030F1BF8>, meshname=aesdg, material=None, mesh_orientation=None, {}
-->trying export of <bpy_struct, Mesh("aesdg") at 0x00000242030F1BF8> to F:\rm_auto_stuff\urdf\all_rm\unnamed\meshes\stl\aesdg.stl
-->wrote stl to F:\rm_auto_stuff\urdf\all_rm\unnamed\meshes\stl\aesdg.stl from bpy_types.Mesh

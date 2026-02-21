@@ -2,7 +2,7 @@
   "links": [
     {
       "collisions": [
-        "body.001"
+        "body_collision"
       ],
       "name": "body_link",
       "visuals": [
@@ -11,7 +11,7 @@
     },
     {
       "collisions": [
-        "swivel.001"
+        "swivel_collision"
       ],
       "name": "swivel_link",
       "visuals": [
@@ -20,7 +20,7 @@
     },
     {
       "collisions": [
-        "link1.001"
+        "link1_collision"
       ],
       "name": "link1_link",
       "visuals": [
@@ -29,7 +29,7 @@
     },
     {
       "collisions": [
-        "link2.001"
+        "link2_collision"
       ],
       "name": "link2_link",
       "visuals": [
@@ -37,22 +37,26 @@
       ]
     },
     {
-      "collisions": [],
-      "name": "bevel_link",
-      "visuals": []
-    },
-    {
       "collisions": [
-        "bevel.001"
+        "bevel_collision_roll"
       ],
-      "name": "bevel_link.001",
+      "name": "bevel_link",
       "visuals": [
-        "bevel"
+        "bevel_roll"
       ]
     },
     {
       "collisions": [
-        "gripperl.001"
+        "bevel_collision_pitch"
+      ],
+      "name": "bevel_link_link",
+      "visuals": [
+        "bevel_pitch"
+      ]
+    },
+    {
+      "collisions": [
+        "gripperl_collision"
       ],
       "name": "gripperl_link",
       "visuals": [
@@ -61,7 +65,7 @@
     },
     {
       "collisions": [
-        "gripperr.001"
+        "gripperr_collision"
       ],
       "name": "gripperr_link",
       "visuals": [

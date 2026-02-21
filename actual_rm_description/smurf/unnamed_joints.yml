@@ -9,9 +9,9 @@
       "name": "swivel",
       "origin": {
         "position": [
-          -0.2560271918773651,
-          0.002497948706150055,
-          0.5616340872365981
+          9.102386499338538e-05,
+          -1.1472603320606623e-06,
+          0.0553710121137507
         ],
         "relative_to": "body_link",
         "rotation": [
@@ -31,9 +31,9 @@
       "name": "link1",
       "origin": {
         "position": [
-          -1.0430813457418253e-06,
-          0.009736680074732308,
-          0.13499999850988376
+          -9.103660052023343e-05,
+          1.1411682137030255e-06,
+          0.11805228143930435
         ],
         "relative_to": "swivel_link",
         "rotation": [
@@ -53,9 +53,9 @@
       "name": "link2",
       "origin": {
         "position": [
-          0.002058863639831543,
-          0.002108633518218994,
-          0.5799883604049683
+          -0.001884691714781006,
+          0.002110402371072073,
+          0.5796843767166138
         ],
         "relative_to": "link1_link",
         "rotation": [
@@ -72,12 +72,12 @@
       "cut_joint": false,
       "joint_dependencies": [],
       "joint_type": "revolute",
-      "name": "bevel_pitch",
+      "name": "bevel_roll",
       "origin": {
         "position": [
-          -0.5232179912310464,
-          -0.0018157969061576296,
-          -0.00019673865115521494
+          -0.5194103661924601,
+          -0.0018163800705224276,
+          -0.00019627809524536133
         ],
         "relative_to": "link2_link",
         "rotation": [
@@ -89,23 +89,23 @@
       "parent": "link2_link"
     },
     {
-      "child": "bevel_link.001",
+      "child": "bevel_link_link",
       "constraint_axes": [],
       "cut_joint": false,
       "joint_dependencies": [],
       "joint_type": "revolute",
-      "name": "bevel_roll",
+      "name": "bevel_pitch",
       "origin": {
         "position": [
-          -1.9209460055957805e-07,
-          1.115950064994875e-09,
-          1.6254441259633268e-07
+          0.0,
+          -5.960464477539063e-08,
+          -1.1920928955078125e-07
         ],
         "relative_to": "bevel_link",
         "rotation": [
-          0.0,
-          0.0,
-          0.0
+          3.141592653589793,
+          -3.89414338997085e-07,
+          3.141592653589793
         ]
       },
       "parent": "bevel_link"
@@ -119,18 +119,18 @@
       "name": "gripper_l",
       "origin": {
         "position": [
-          -0.11603432893753052,
-          -0.01153850369155407,
-          -0.00026226043701171875
+          0.11603415022593866,
+          0.01153975585475564,
+          -0.00026281129809746506
         ],
-        "relative_to": "bevel_link.001",
+        "relative_to": "bevel_link_link",
         "rotation": [
           0.0,
           0.0,
-          0.0
+          3.141592653589793
         ]
       },
-      "parent": "bevel_link.001"
+      "parent": "bevel_link_link"
     },
     {
       "child": "gripperr_link",
@@ -141,18 +141,18 @@
       "name": "gripper_r",
       "origin": {
         "position": [
-          -0.1161196231842041,
-          0.009528161957859993,
-          -0.0002627372741699219
+          0.11611950407741944,
+          -0.009526508394628763,
+          -0.00026322849737292486
         ],
-        "relative_to": "bevel_link.001",
+        "relative_to": "bevel_link_link",
         "rotation": [
           0.0,
           0.0,
-          0.0
+          3.141592653589793
         ]
       },
-      "parent": "bevel_link.001"
+      "parent": "bevel_link_link"
     }
   ]
 }

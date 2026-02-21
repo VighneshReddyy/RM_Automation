@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'stick_pick_and_place = rm_operate.pick_and_place_stick:main',
             'pick_and_place = rm_operate.pick_and_place:main',
             'send_pwm = rm_operate.send_pwm:main',
             'move_to_coords=rm_operate.coords:main',

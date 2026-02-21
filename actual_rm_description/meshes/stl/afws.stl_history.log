@@ -1,3 +1,0 @@
-Instantiated with filepath=None->None, scale=[1.0, 1.0, 1.0], mesh=<bpy_struct, Mesh("afws") at 0x00000242030F0548>, meshname=afws, material=None, mesh_orientation=None, {}
-->trying export of <bpy_struct, Mesh("afws") at 0x00000242030F0548> to F:\rm_auto_stuff\urdf\all_rm\unnamed\meshes\stl\afws.stl
-->wrote stl to F:\rm_auto_stuff\urdf\all_rm\unnamed\meshes\stl\afws.stl from bpy_types.Mesh

@@ -1,3 +1,0 @@
-Instantiated with filepath=None->None, scale=[1.0, 1.0, 1.0], mesh=<bpy_struct, Mesh("dsgsdah") at 0x00000242030F2B18>, meshname=dsgsdah, material=None, mesh_orientation=None, {}
-->trying export of <bpy_struct, Mesh("dsgsdah") at 0x00000242030F2B18> to F:\rm_auto_stuff\urdf\all_rm\unnamed\meshes\stl\dsgsdah.stl
-->wrote stl to F:\rm_auto_stuff\urdf\all_rm\unnamed\meshes\stl\dsgsdah.stl from bpy_types.Mesh
